@@ -16,11 +16,11 @@
       <section class="brand-panel" aria-label="Mika product preview">
         <div class="launch-strip">
           <img class="logo-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
-          <span data-i18n="betaBadge">Private beta for default parents</span>
+          <span data-i18n="betaBadge">Private beta for busy families</span>
         </div>
         <div class="brand-lockup">
-          <p class="eyebrow" data-i18n="heroEyebrow">For moms who remember everything</p>
-          <h1 data-i18n="heroTitle">Turn family chaos into a morning brief.</h1>
+          <p class="eyebrow" data-i18n="heroEyebrow">For families who remember too much</p>
+          <h1 data-i18n="heroTitle">Turn your family chaos into a calm morning.</h1>
         </div>
         <p class="brand-copy" data-i18n="heroCopy">
           Mika gathers the school forms, voice notes, calendar chaos, and
@@ -31,7 +31,7 @@
             name="hero_email"
             type="email"
             autocomplete="email"
-            placeholder="you@family.com"
+            placeholder="you@email.com"
             data-i18n-placeholder="heroEmailPlaceholder"
             required
           />
@@ -109,7 +109,7 @@
               "It finally gives the co-parent the context, not just another
               calendar invite."
             </p>
-            <strong data-i18n="proofTwoByline">Working parent · founder household</strong>
+            <strong data-i18n="proofTwoByline">Working parent · busy household</strong>
           </article>
         </section>
       </section>
@@ -129,7 +129,7 @@
         <section id="onboarding" class="screen active" aria-label="Onboarding">
           <div class="onboarding-hero">
             <img class="phone-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
-            <p class="eyebrow">Welcome to Mika</p>
+            <p class="eyebrow" data-i18n="appWelcome">Welcome to Mika</p>
             <h2 id="onboarding-title">Set up your household in minutes.</h2>
             <p id="onboarding-copy">
               Mika learns who is in the family, when your brief should arrive,
@@ -147,11 +147,11 @@
           <div class="onboarding-card">
             <div class="onboarding-step active" data-step-panel="0">
               <label>
-                Household name
+                <span data-i18n="householdNameLabel">Household name</span>
                 <input value="The Carter Family" />
               </label>
               <label>
-                Timezone
+                <span data-i18n="timezoneLabel">Timezone</span>
                 <select>
                   <option>America/Toronto</option>
                   <option>America/New_York</option>
@@ -164,18 +164,18 @@
               <div class="kid-row">
                 <span class="avatar rose">M</span>
                 <label>
-                  Child
+                  <span data-i18n="childLabel">Child</span>
                   <input value="Mia, 7" />
                 </label>
               </div>
               <div class="kid-row">
                 <span class="avatar blue">L</span>
                 <label>
-                  Child
+                  <span data-i18n="childLabel">Child</span>
                   <input value="Leo, 4" />
                 </label>
               </div>
-              <button class="ghost-button" type="button">Add another child</button>
+              <button class="ghost-button" type="button" data-i18n="addChildButton">Add another child</button>
             </div>
 
             <div class="onboarding-step" data-step-panel="2">
@@ -184,25 +184,25 @@
                   <path d="M7 2v3M17 2v3M4 9h16M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
                 </svg>
                 <div>
-                  <strong>Google Calendar</strong>
-                  <p>Two-way sync for events Mika creates and watches.</p>
+                  <strong data-i18n="googleCalendarTitle">Google Calendar</strong>
+                  <p data-i18n="googleCalendarCopy">Two-way sync for events Mika creates and watches.</p>
                 </div>
               </div>
-              <button class="primary-button" type="button">Connect calendar</button>
-              <button class="text-button" type="button">Skip for prototype</button>
+              <button class="primary-button" type="button" data-i18n="connectCalendarButton">Connect calendar</button>
+              <button class="text-button" type="button" data-i18n="skipPrototypeButton">Skip for prototype</button>
             </div>
 
             <div class="onboarding-step" data-step-panel="3">
               <label>
-                Daily brief time
+                <span data-i18n="briefTimeLabel">Daily brief time</span>
                 <input type="time" value="07:00" />
               </label>
               <div class="toggle-row">
-                <span>Email brief</span>
+                <span data-i18n="emailBriefLabel">Email brief</span>
                 <button class="toggle on" type="button" aria-pressed="true"></button>
               </div>
               <div class="toggle-row">
-                <span>Push notification</span>
+                <span data-i18n="pushNotificationLabel">Push notification</span>
                 <button class="toggle on" type="button" aria-pressed="true"></button>
               </div>
             </div>
@@ -217,8 +217,8 @@
         <section id="home" class="screen app-screen" aria-label="Daily brief home">
           <header class="app-header">
             <div>
-              <p class="eyebrow">Wednesday, Apr 22</p>
-              <h2>Good morning, Chan.</h2>
+              <p class="eyebrow" data-i18n="homeDate">Wednesday, Apr 22</p>
+              <h2 data-i18n="homeGreeting">Good morning.</h2>
             </div>
             <img class="header-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
             <button id="open-settings" class="icon-button" type="button" aria-label="Settings">
@@ -231,36 +231,36 @@
 
           <div class="brief-hero">
             <div>
-              <p class="eyebrow">Today at a glance</p>
-              <strong>3 events, 4 tasks, 1 thing that might slip.</strong>
+              <p class="eyebrow" data-i18n="briefHeroEyebrow">Today at a glance</p>
+              <strong data-i18n="briefHeroText">3 events, 4 tasks, 1 thing that might slip.</strong>
             </div>
             <span class="brief-time">7:00</span>
           </div>
 
           <article class="brief-section">
-            <h3>Today</h3>
-            <p>
+            <h3 data-i18n="briefTodayTitle">Today</h3>
+            <p data-i18n="briefTodayCopy">
               Mia has swim at 4:00 at Rec Center, and Sam is on pickup. Leo has
               library day, so the book bag needs to leave with him.
             </p>
           </article>
           <article class="brief-section">
-            <h3>To Do</h3>
-            <p>
+            <h3 data-i18n="briefTodoTitle">To Do</h3>
+            <p data-i18n="briefTodoCopy">
               RSVP for Aria's birthday by Friday. Buy milk tonight, and sign the
               field trip form before backpacks are packed.
             </p>
           </article>
           <article class="brief-section alert">
-            <h3>Falling Through</h3>
-            <p>
+            <h3 data-i18n="briefFallingTitle">Falling Through</h3>
+            <p data-i18n="briefFallingCopy">
               The field trip permission slip is due tomorrow morning and still
               needs a parent signature.
             </p>
           </article>
           <article class="brief-section calm">
-            <h3>Small Win</h3>
-            <p>
+            <h3 data-i18n="briefWinTitle">Small Win</h3>
+            <p data-i18n="briefWinCopy">
               Saturday morning is still clear. Mika is keeping it that way.
             </p>
           </article>
@@ -269,50 +269,50 @@
         <section id="tasks" class="screen app-screen" aria-label="Tasks">
           <header class="app-header">
             <div>
-              <p class="eyebrow">Household tasks</p>
-              <h2>What needs doing</h2>
+              <p class="eyebrow" data-i18n="tasksEyebrow">Household tasks</p>
+              <h2 data-i18n="tasksTitle">What needs doing</h2>
             </div>
           </header>
           <div class="tabs" role="tablist" aria-label="Task filter">
-            <button class="active" type="button">Today</button>
-            <button type="button">Week</button>
-            <button type="button">Later</button>
-            <button type="button">Done</button>
+            <button class="active" type="button" data-i18n="tabToday">Today</button>
+            <button type="button" data-i18n="tabWeek">Week</button>
+            <button type="button" data-i18n="tabLater">Later</button>
+            <button type="button" data-i18n="tabDone">Done</button>
           </div>
           <div class="task-list">
             <button class="task-item overdue" type="button">
               <span class="check-circle"></span>
               <span>
-                <strong>Sign field trip form</strong>
-                <small>Due tomorrow morning · From photo</small>
+                <strong data-i18n="taskSlipTitle">Sign field trip form</strong>
+                <small data-i18n="taskSlipMeta">Due tomorrow morning · From photo</small>
               </span>
-              <em>Chan</em>
+              <em>Mom</em>
             </button>
             <button class="task-item" type="button">
               <span class="check-circle"></span>
               <span>
-                <strong>Buy milk</strong>
-                <small>No date · Kitchen note</small>
+                <strong data-i18n="taskMilkTitle">Buy milk</strong>
+                <small data-i18n="taskMilkMeta">No date · Kitchen note</small>
               </span>
               <em>Sam</em>
             </button>
             <button class="task-item" type="button">
               <span class="check-circle"></span>
               <span>
-                <strong>RSVP to Aria's birthday</strong>
-                <small>Friday by 5:00 PM</small>
+                <strong data-i18n="taskRsvpTitle">RSVP to Aria's birthday</strong>
+                <small data-i18n="taskRsvpMeta">Friday by 5:00 PM</small>
               </span>
-              <em>Chan</em>
+              <em>Mom</em>
             </button>
           </div>
-          <div id="undo-toast" class="toast" role="status">Task completed. Undo</div>
+          <div id="undo-toast" class="toast" role="status" data-i18n="undoToast">Task completed. Undo</div>
         </section>
 
         <section id="events" class="screen app-screen" aria-label="Events">
           <header class="app-header">
             <div>
-              <p class="eyebrow">Calendar</p>
-              <h2>This week</h2>
+              <p class="eyebrow" data-i18n="calendarEyebrow">Calendar</p>
+              <h2 data-i18n="calendarTitle">This week</h2>
             </div>
           </header>
           <div class="week-grid" aria-label="Week calendar">
@@ -339,17 +339,17 @@
             </div>
           </div>
           <article class="detail-card">
-            <p class="eyebrow">Selected event</p>
-            <h3>Mia swim class</h3>
-            <p>Today, 4:00 PM at Rec Center. Sam is on pickup.</p>
+              <p class="eyebrow" data-i18n="selectedEventEyebrow">Selected event</p>
+            <h3 data-i18n="selectedEventTitle">Mia swim class</h3>
+            <p data-i18n="selectedEventCopy">Today, 4:00 PM at Rec Center. Sam is on pickup.</p>
           </article>
         </section>
 
         <section id="meals" class="screen app-screen" aria-label="Meal list">
           <header class="app-header">
             <div>
-              <p class="eyebrow">Dinner list</p>
-              <h2>This week</h2>
+              <p class="eyebrow" data-i18n="mealsEyebrow">Dinner list</p>
+              <h2 data-i18n="mealsTitle">This week</h2>
             </div>
             <button class="icon-button" type="button" aria-label="Next week">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -371,25 +371,25 @@
         <section id="settings" class="screen app-screen" aria-label="Settings">
           <header class="app-header">
             <div>
-              <p class="eyebrow">Settings</p>
-              <h2>The Carter Family</h2>
+              <p class="eyebrow" data-i18n="settingsEyebrow">Settings</p>
+              <h2 data-i18n="settingsTitle">The Carter Family</h2>
             </div>
           </header>
           <div class="settings-list">
             <button type="button">
-              <span>Household</span>
-              <strong>2 parents, 2 kids</strong>
+              <span data-i18n="settingsHousehold">Household</span>
+              <strong data-i18n="settingsHouseholdValue">2 parents, 2 kids</strong>
             </button>
             <button type="button">
-              <span>Daily brief</span>
+              <span data-i18n="settingsBrief">Daily brief</span>
               <strong>7:00 AM</strong>
             </button>
             <button type="button">
-              <span>Notifications</span>
-              <strong>Email + push</strong>
+              <span data-i18n="settingsNotifications">Notifications</span>
+              <strong data-i18n="settingsNotificationsValue">Email + push</strong>
             </button>
             <button type="button">
-              <span>Data export</span>
+              <span data-i18n="settingsExport">Data export</span>
               <strong>JSON</strong>
             </button>
           </div>
@@ -403,58 +403,58 @@
               </svg>
             </button>
             <div>
-              <p class="eyebrow">Review before saving</p>
-              <h2>Mika parsed this</h2>
+              <p class="eyebrow" data-i18n="confirmEyebrow">Review before saving</p>
+              <h2 data-i18n="confirmTitle">Mika parsed this</h2>
             </div>
           </header>
           <div class="parsed-card">
             <label>
-              Type
+              <span data-i18n="typeLabel">Type</span>
               <select>
                 <option>Event</option>
                 <option>Task</option>
               </select>
             </label>
             <label>
-              Title
+              <span data-i18n="titleLabel">Title</span>
               <input value="Mia swim class" />
             </label>
             <label>
-              Date and time
+              <span data-i18n="dateTimeLabel">Date and time</span>
               <input value="Tuesday at 4:00 PM" />
             </label>
             <label>
-              Location
+              <span data-i18n="locationLabel">Location</span>
               <input value="Rec Center" />
             </label>
             <label>
-              Owner
+              <span data-i18n="ownerLabel">Owner</span>
               <input value="Sam" />
             </label>
           </div>
-          <button id="save-confirm" class="primary-button full" type="button">Save to Mika</button>
+          <button id="save-confirm" class="primary-button full" type="button" data-i18n="saveMikaButton">Save to Mika</button>
         </section>
 
         <div id="capture-sheet" class="capture-sheet" aria-hidden="true">
           <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Capture">
             <div class="sheet-handle" aria-hidden="true"></div>
-            <h2>Add anything messy</h2>
-            <p>Type it, say it, or snap a form. Mika turns it into a draft.</p>
+            <h2 data-i18n="captureTitle">Add anything messy</h2>
+            <p data-i18n="captureCopy">Type it, say it, or snap a form. Mika turns it into a draft.</p>
             <textarea id="capture-input">Mia has swim class Tuesday 4pm at Rec Center, Sam picks up</textarea>
             <div class="capture-actions">
               <button class="icon-labeled" type="button">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3v10M8 7v5a4 4 0 0 0 8 0V7M5 11v1a7 7 0 0 0 14 0v-1M12 19v3" />
                 </svg>
-                Voice
+                <span data-i18n="voiceButton">Voice</span>
               </button>
               <button class="icon-labeled" type="button">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 7h3l2-3h6l2 3h3v13H4V7Zm8 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
                 </svg>
-                Photo
+                <span data-i18n="photoButton">Photo</span>
               </button>
-              <button id="parse-capture" class="primary-button" type="button">Parse</button>
+              <button id="parse-capture" class="primary-button" type="button" data-i18n="parseButton">Parse</button>
             </div>
           </div>
         </div>
@@ -464,13 +464,13 @@
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 11 12 4l8 7v9H5v-9Z" />
             </svg>
-            <span>Home</span>
+            <span data-i18n="navHome">Home</span>
           </button>
           <button class="nav-button" data-target="tasks" type="button" aria-label="Tasks">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m5 12 4 4L19 6M5 20h14" />
             </svg>
-            <span>Tasks</span>
+            <span data-i18n="navTasks">Tasks</span>
           </button>
           <button id="open-capture" class="add-button" type="button" aria-label="Add capture">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -481,13 +481,13 @@
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7 3v3M17 3v3M4 9h16M5 5h14v15H5V5Z" />
             </svg>
-            <span>Events</span>
+            <span data-i18n="navEvents">Events</span>
           </button>
           <button class="nav-button" data-target="meals" type="button" aria-label="Meals">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7 3v18M4 8h6M17 3v18M14 3h6v8a3 3 0 0 1-6 0V3Z" />
             </svg>
-            <span>Meals</span>
+            <span data-i18n="navMeals">Meals</span>
           </button>
         </nav>
       </section>
@@ -505,11 +505,11 @@
             <div class="form-grid">
               <label>
                 <span data-i18n="firstNameLabel">First name</span>
-                <input name="first_name" autocomplete="given-name" placeholder="Chan" data-i18n-placeholder="firstNamePlaceholder" required />
+                <input name="first_name" autocomplete="given-name" placeholder="Alex" data-i18n-placeholder="firstNamePlaceholder" required />
               </label>
               <label>
                 <span data-i18n="emailLabel">Email</span>
-                <input name="email" type="email" autocomplete="email" placeholder="you@family.com" data-i18n-placeholder="emailPlaceholder" required />
+                <input name="email" type="email" autocomplete="email" placeholder="you@email.com" data-i18n-placeholder="emailPlaceholder" required />
               </label>
               <label>
                 <span data-i18n="locationLabel">Location</span>
@@ -526,6 +526,49 @@
                 </select>
               </label>
             </div>
+            <fieldset class="rating-field">
+              <legend data-i18n="ratingLabel">How strong is the idea?</legend>
+              <div class="star-rating" aria-label="Rate Mika from 1 to 5">
+                <input id="rating-5" name="rating" type="radio" value="5" required />
+                <label for="rating-5" aria-label="5 stars">★</label>
+                <input id="rating-4" name="rating" type="radio" value="4" />
+                <label for="rating-4" aria-label="4 stars">★</label>
+                <input id="rating-3" name="rating" type="radio" value="3" />
+                <label for="rating-3" aria-label="3 stars">★</label>
+                <input id="rating-2" name="rating" type="radio" value="2" />
+                <label for="rating-2" aria-label="2 stars">★</label>
+                <input id="rating-1" name="rating" type="radio" value="1" />
+                <label for="rating-1" aria-label="1 star">★</label>
+              </div>
+            </fieldset>
+            <label>
+              <span data-i18n="usefulnessLabel">After trying the prototype, this feels...</span>
+              <select name="usefulness" required>
+                <option value="" data-i18n="usefulnessPlaceholder">Choose one</option>
+                <option value="love_experience" data-i18n="usefulnessLove">I love the experience</option>
+                <option value="very_useful" data-i18n="usefulnessVery">Very useful for my family</option>
+                <option value="interesting" data-i18n="usefulnessInteresting">Interesting, but I need to see more</option>
+                <option value="unclear" data-i18n="usefulnessUnclear">The value is not clear yet</option>
+                <option value="not_useful" data-i18n="usefulnessNot">Not useful for my family</option>
+              </select>
+            </label>
+            <fieldset class="keyword-field">
+              <legend data-i18n="keywordsLabel">What should Mika help with?</legend>
+              <label><input type="checkbox" name="feedback_keywords" value="school_forms" /> <span data-i18n="keywordForms">School forms</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="calendar" /> <span data-i18n="keywordCalendar">Calendar chaos</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="coparent_handoffs" /> <span data-i18n="keywordHandoffs">Co-parent handoffs</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="forgotten_tasks" /> <span data-i18n="keywordTasks">Forgotten tasks</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="meals" /> <span data-i18n="keywordMeals">Meals</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="daily_brief" /> <span data-i18n="keywordBrief">Morning brief</span></label>
+            </fieldset>
+            <label>
+              <span data-i18n="familySnapshotLabel">Family snapshot (optional)</span>
+              <textarea
+                name="family_snapshot"
+                placeholder="Example: 2 parents, 2 kids ages 4 and 7. One parent travels often, one manages school logistics."
+                data-i18n-placeholder="familySnapshotPlaceholder"
+              ></textarea>
+            </label>
             <label>
               <span data-i18n="commentLabel">Product feedback</span>
               <textarea
@@ -545,6 +588,27 @@
         </section>
       </section>
     </main>
+
+    <section class="footer-waitlist" aria-label="Join Mika waitlist">
+      <p class="eyebrow" data-i18n="footerEyebrow">Early access</p>
+      <h2 data-i18n="footerTitle">Want Mika in your family?</h2>
+      <p data-i18n="footerCopy">
+        We're onboarding a small cohort of beta families now. Leave your email
+        and we'll reach out when there's a spot.
+      </p>
+      <form id="footer-waitlist" class="footer-waitlist-form">
+        <input
+          name="footer_email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@email.com"
+          data-i18n-placeholder="heroEmailPlaceholder"
+          required
+        />
+        <button class="brand-cta" type="submit" data-i18n="footerButton">Join the waitlist</button>
+      </form>
+      <strong data-i18n="footerPrivacy">No kid data sold, ever. You can delete everything in one tap.</strong>
+    </section>
 
     <script src="app.js"></script>
   </body>

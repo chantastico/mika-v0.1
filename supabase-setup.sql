@@ -4,12 +4,32 @@ create table if not exists public.mika_waitlist (
   email text not null,
   location text not null,
   parent_type text,
+  rating integer check (rating between 1 and 5),
+  usefulness text,
+  feedback_keywords text,
+  family_snapshot text,
   comment text not null,
+  language text not null default 'en',
   source text not null default 'github_pages_prototype',
   page_url text,
   user_agent text,
   created_at timestamptz not null default now()
 );
+
+alter table public.mika_waitlist
+add column if not exists rating integer check (rating between 1 and 5);
+
+alter table public.mika_waitlist
+add column if not exists usefulness text;
+
+alter table public.mika_waitlist
+add column if not exists feedback_keywords text;
+
+alter table public.mika_waitlist
+add column if not exists family_snapshot text;
+
+alter table public.mika_waitlist
+add column if not exists language text not null default 'en';
 
 alter table public.mika_waitlist enable row level security;
 

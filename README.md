@@ -34,7 +34,13 @@ GitHub will provide a public URL after the Pages deploy finishes.
    - `YOUR_SUPABASE_ANON_KEY`
 6. Commit and redeploy the updated `app.js`.
 
-The form collects first name, email, location, parent type, product feedback, page URL, and user agent.
+The form collects first name, email, location, parent type, 1-5 rating, usefulness signal, feedback keywords, optional family snapshot, product feedback, language, page URL, user agent, and timestamp.
+
+## Feedback Collection Recommendation
+
+Use Supabase as the source of truth for live submissions. It safely receives form entries from GitHub Pages and automatically stores `created_at` timestamps.
+
+For analysis, export the `mika_waitlist` table from Supabase as CSV and open it in Google Sheets or Excel. This gives you spreadsheet analysis without trying to make the static website write directly into a spreadsheet.
 
 ## Language Toggle
 
