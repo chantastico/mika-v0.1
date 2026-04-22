@@ -7,98 +7,120 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="language-switch" aria-label="Language selector">
+      <button class="active" type="button" data-lang="en">English</button>
+      <span>/</span>
+      <button type="button" data-lang="fr">Français</button>
+    </div>
     <main class="shell" aria-label="Mika clickable prototype">
       <section class="brand-panel" aria-label="Mika product preview">
         <div class="launch-strip">
           <img class="logo-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
-          <span>Private beta for default parents</span>
+          <span data-i18n="betaBadge">Private beta for default parents</span>
         </div>
         <div class="brand-lockup">
-          <p class="eyebrow">For moms who remember everything</p>
-          <h1>Turn family chaos into a morning brief.</h1>
+          <p class="eyebrow" data-i18n="heroEyebrow">For moms who remember everything</p>
+          <h1 data-i18n="heroTitle">Turn family chaos into a morning brief.</h1>
         </div>
-        <p class="brand-copy">
+        <p class="brand-copy" data-i18n="heroCopy">
           Mika gathers the school forms, voice notes, calendar chaos, and
           partner handoffs before they become the thing everyone forgot.
         </p>
+        <form id="hero-waitlist" class="hero-waitlist" aria-label="Join the Mika waitlist">
+          <input
+            name="hero_email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@family.com"
+            data-i18n-placeholder="heroEmailPlaceholder"
+            required
+          />
+          <button class="brand-cta" type="submit" data-i18n="heroWaitlistButton">Get early access</button>
+        </form>
         <div class="hero-actions">
-          <button id="demo-start" class="brand-cta" type="button">Start the Mika demo</button>
-          <span>No kid data sold. No AI mystery moves.</span>
+          <button id="demo-start" class="demo-link" type="button" data-i18n="demoLink">Try the live demo -></button>
+          <span data-i18n="privacyLine">Your family data never trains anyone else's AI.</span>
         </div>
         <div class="signal-row" aria-label="Mika positioning">
-          <span>School forms</span>
-          <span>Voice notes</span>
-          <span>Fridge calendar</span>
-          <span>Partner handoffs</span>
+          <span data-i18n="signalForms">School forms</span>
+          <span data-i18n="signalVoice">Voice notes</span>
+          <span data-i18n="signalCalendar">Fridge calendar</span>
+          <span data-i18n="signalHandoffs">Partner handoffs</span>
         </div>
         <section class="demo-flow" aria-label="Investor demo flow">
           <div class="flow-card hot">
             <span>01</span>
-            <strong>Before Mika</strong>
-            <p>Notes, texts, calendars, paper forms, and one mom trying to hold the whole week in her head.</p>
+            <strong data-i18n="flowBeforeTitle">Before Mika</strong>
+            <p data-i18n="flowBeforeCopy">Notes, texts, calendars, paper forms, and one mom trying to hold the whole week in her head.</p>
           </div>
           <div class="flow-card">
             <span>02</span>
-            <strong>Capture the chaos</strong>
-            <p>Snap the form or say the messy thing. Mika quietly turns it into a draft.</p>
+            <strong data-i18n="flowCaptureTitle">Capture the chaos</strong>
+            <p data-i18n="flowCaptureCopy">Snap the form or say the messy thing. Mika quietly turns it into a draft.</p>
           </div>
           <div class="flow-card">
             <span>03</span>
-            <strong>Morning brief</strong>
-            <p>The family gets a clean 7 AM readout of today, to-dos, and what might slip.</p>
+            <strong data-i18n="flowBriefTitle">Morning brief</strong>
+            <p data-i18n="flowBriefCopy">The family gets a clean 7 AM readout of today, to-dos, and what might slip.</p>
           </div>
           <div class="flow-card">
             <span>04</span>
-            <strong>No asking required</strong>
-            <p>Co-parents know what needs doing before the group chat spiral starts.</p>
+            <strong data-i18n="flowHandoffTitle">No asking required</strong>
+            <p data-i18n="flowHandoffCopy">Co-parents know what needs doing before the group chat spiral starts.</p>
           </div>
         </section>
         <div class="before-after" aria-label="Before Mika and after Mika">
           <div class="moment-card before">
-            <p class="eyebrow">Before Mika</p>
-            <h2>Wait. What did we forget?</h2>
+            <p class="eyebrow" data-i18n="beforeLabel">Before Mika</p>
+            <h2 data-i18n="beforeTitle">Wait. What did we forget?</h2>
             <div class="chaos-stack">
-              <span class="mini-note purple">Field trip slip?</span>
-              <span class="mini-note blue">Who has swim pickup?</span>
-              <span class="mini-note green">RSVP deadline</span>
-              <span class="mini-note coral">Milk. Again.</span>
+              <span class="mini-note purple" data-i18n="noteSlip">Field trip slip?</span>
+              <span class="mini-note blue" data-i18n="notePickup">Who has swim pickup?</span>
+              <span class="mini-note green" data-i18n="noteRsvp">RSVP deadline</span>
+              <span class="mini-note coral" data-i18n="noteMilk">Milk. Again.</span>
             </div>
           </div>
           <div class="moment-card after">
-            <p class="eyebrow">After Mika</p>
-            <h2>Your 7 AM family brief.</h2>
+            <p class="eyebrow" data-i18n="afterLabel">After Mika</p>
+            <h2 data-i18n="afterTitle">Your 7 AM family brief.</h2>
             <div class="brief-preview">
-              <strong>Today is handled.</strong>
-              <p>
+              <strong data-i18n="briefPreviewTitle">Today is handled.</strong>
+              <p data-i18n="briefPreviewCopy">
                 Swim at 4, Sam pickup. Field trip slip due tomorrow. RSVP by
                 Friday. Milk is on the list.
               </p>
             </div>
           </div>
         </div>
-        <p class="trust-copy">
+        <p class="trust-copy" data-i18n="trustCopy">
           Built for organized-but-overwhelmed moms running the house from
           Notes, calendars, texts, WhatsApp, and one heroic fridge magnet.
         </p>
         <section class="social-proof" aria-label="Social proof">
           <article>
-            <p>
+            <p data-i18n="proofOne">
               "This is the app I wanted after the third forgotten permission
               slip."
             </p>
-            <strong>Beta mom · 2 kids · Google Calendar household</strong>
+            <strong data-i18n="proofOneByline">Beta mom · 2 kids · Google Calendar household</strong>
           </article>
           <article>
-            <p>
+            <p data-i18n="proofTwo">
               "It finally gives the co-parent the context, not just another
               calendar invite."
             </p>
-            <strong>Working parent · founder household</strong>
+            <strong data-i18n="proofTwoByline">Working parent · founder household</strong>
           </article>
         </section>
       </section>
 
+      <section class="prototype-column" aria-label="Mika prototype and feedback">
       <section class="phone" aria-label="Mika app">
+        <div class="prototype-guide" aria-hidden="true">
+          <span class="guide-cursor"></span>
+          <strong data-i18n="guideTitle">Tap the prototype</strong>
+          <small data-i18n="guideCopy">Start onboarding or hit + to add a messy family thing.</small>
+        </div>
         <div class="status-bar" aria-hidden="true">
           <span>9:41</span>
           <span>LTE 100%</span>
@@ -468,6 +490,59 @@
             <span>Meals</span>
           </button>
         </nav>
+      </section>
+
+        <section class="feedback-card" aria-label="Mika waitlist and feedback">
+          <div>
+            <p class="eyebrow" data-i18n="feedbackEyebrow">Join the private beta</p>
+            <h2 data-i18n="feedbackTitle">Tell us what your family always forgets.</h2>
+            <p data-i18n="feedbackCopy">
+              Leave your details and the one logistics problem you wish Mika
+              would solve first.
+            </p>
+          </div>
+          <form id="waitlist-form" class="waitlist-form">
+            <div class="form-grid">
+              <label>
+                <span data-i18n="firstNameLabel">First name</span>
+                <input name="first_name" autocomplete="given-name" placeholder="Chan" data-i18n-placeholder="firstNamePlaceholder" required />
+              </label>
+              <label>
+                <span data-i18n="emailLabel">Email</span>
+                <input name="email" type="email" autocomplete="email" placeholder="you@family.com" data-i18n-placeholder="emailPlaceholder" required />
+              </label>
+              <label>
+                <span data-i18n="locationLabel">Location</span>
+                <input name="location" autocomplete="address-level2" placeholder="Toronto, ON" data-i18n-placeholder="locationPlaceholder" required />
+              </label>
+              <label>
+                <span data-i18n="parentTypeLabel">Parent type</span>
+                <select name="parent_type">
+                  <option data-i18n="parentWorking">Working mom</option>
+                  <option data-i18n="parentStayHome">Stay-at-home mom</option>
+                  <option data-i18n="parentDefault">Default parent</option>
+                  <option data-i18n="parentCoparent">Co-parent</option>
+                  <option data-i18n="parentFounder">Founder household</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span data-i18n="commentLabel">Product feedback</span>
+              <textarea
+                name="comment"
+                placeholder="What does your family always forget? What would make Mika useful enough to share?"
+                data-i18n-placeholder="commentPlaceholder"
+                required
+              ></textarea>
+            </label>
+            <div class="form-footer">
+              <button class="brand-cta" type="submit" data-i18n="feedbackButton">Get early access</button>
+              <p id="waitlist-status" role="status" data-i18n="formDefaultStatus">
+                Privacy-first beta. No kid data sold. No spam.
+              </p>
+            </div>
+          </form>
+        </section>
       </section>
     </main>
 
