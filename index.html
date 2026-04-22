@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mika Product Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell" aria-label="Mika clickable prototype">
+      <section class="brand-panel" aria-label="Mika product preview">
+        <div class="launch-strip">
+          <img class="logo-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
+          <span>Private beta for default parents</span>
+        </div>
+        <div class="brand-lockup">
+          <p class="eyebrow">For moms who remember everything</p>
+          <h1>Turn family chaos into a morning brief.</h1>
+        </div>
+        <p class="brand-copy">
+          Mika gathers the school forms, voice notes, calendar chaos, and
+          partner handoffs before they become the thing everyone forgot.
+        </p>
+        <div class="hero-actions">
+          <button id="demo-start" class="brand-cta" type="button">Start the Mika demo</button>
+          <span>No kid data sold. No AI mystery moves.</span>
+        </div>
+        <div class="signal-row" aria-label="Mika positioning">
+          <span>School forms</span>
+          <span>Voice notes</span>
+          <span>Fridge calendar</span>
+          <span>Partner handoffs</span>
+        </div>
+        <div class="before-after" aria-label="Before Mika and after Mika">
+          <div class="moment-card before">
+            <p class="eyebrow">Before Mika</p>
+            <h2>Wait. What did we forget?</h2>
+            <div class="chaos-stack">
+              <span class="mini-note purple">Field trip slip?</span>
+              <span class="mini-note blue">Who has swim pickup?</span>
+              <span class="mini-note green">RSVP deadline</span>
+              <span class="mini-note coral">Milk. Again.</span>
+            </div>
+          </div>
+          <div class="moment-card after">
+            <p class="eyebrow">After Mika</p>
+            <h2>Your 7 AM family brief.</h2>
+            <div class="brief-preview">
+              <strong>Today is handled.</strong>
+              <p>
+                Swim at 4, Sam pickup. Field trip slip due tomorrow. RSVP by
+                Friday. Milk is on the list.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="trust-copy">
+          Built for organized-but-overwhelmed moms running the house from
+          Notes, calendars, texts, WhatsApp, and one heroic fridge magnet.
+        </p>
+      </section>
+
+      <section class="phone" aria-label="Mika app">
+        <div class="status-bar" aria-hidden="true">
+          <span>9:41</span>
+          <span>LTE 100%</span>
+        </div>
+
+        <section id="onboarding" class="screen active" aria-label="Onboarding">
+          <div class="onboarding-hero">
+            <img class="phone-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
+            <p class="eyebrow">Welcome to Mika</p>
+            <h2 id="onboarding-title">Set up your household in minutes.</h2>
+            <p id="onboarding-copy">
+              Mika learns who is in the family, when your brief should arrive,
+              and what calendar to watch.
+            </p>
+          </div>
+
+          <div class="progress-dots" aria-label="Onboarding progress">
+            <button class="dot active" data-step="0" aria-label="Step 1"></button>
+            <button class="dot" data-step="1" aria-label="Step 2"></button>
+            <button class="dot" data-step="2" aria-label="Step 3"></button>
+            <button class="dot" data-step="3" aria-label="Step 4"></button>
+          </div>
+
+          <div class="onboarding-card">
+            <div class="onboarding-step active" data-step-panel="0">
+              <label>
+                Household name
+                <input value="The Carter Family" />
+              </label>
+              <label>
+                Timezone
+                <select>
+                  <option>America/Toronto</option>
+                  <option>America/New_York</option>
+                  <option>America/Los_Angeles</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="onboarding-step" data-step-panel="1">
+              <div class="kid-row">
+                <span class="avatar rose">M</span>
+                <label>
+                  Child
+                  <input value="Mia, 7" />
+                </label>
+              </div>
+              <div class="kid-row">
+                <span class="avatar blue">L</span>
+                <label>
+                  Child
+                  <input value="Leo, 4" />
+                </label>
+              </div>
+              <button class="ghost-button" type="button">Add another child</button>
+            </div>
+
+            <div class="onboarding-step" data-step-panel="2">
+              <div class="connect-card">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2v3M17 2v3M4 9h16M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
+                </svg>
+                <div>
+                  <strong>Google Calendar</strong>
+                  <p>Two-way sync for events Mika creates and watches.</p>
+                </div>
+              </div>
+              <button class="primary-button" type="button">Connect calendar</button>
+              <button class="text-button" type="button">Skip for prototype</button>
+            </div>
+
+            <div class="onboarding-step" data-step-panel="3">
+              <label>
+                Daily brief time
+                <input type="time" value="07:00" />
+              </label>
+              <div class="toggle-row">
+                <span>Email brief</span>
+                <button class="toggle on" type="button" aria-pressed="true"></button>
+              </div>
+              <div class="toggle-row">
+                <span>Push notification</span>
+                <button class="toggle on" type="button" aria-pressed="true"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="onboarding-actions">
+            <button id="back-step" class="secondary-button" type="button">Back</button>
+            <button id="next-step" class="primary-button" type="button">Continue</button>
+          </div>
+        </section>
+
+        <section id="home" class="screen app-screen" aria-label="Daily brief home">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow">Wednesday, Apr 22</p>
+              <h2>Good morning, Chan.</h2>
+            </div>
+            <img class="header-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
+            <button id="open-settings" class="icon-button" type="button" aria-label="Settings">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                <path d="m19 13.5 1.5 1.2-2 3.4-1.8-.7a7 7 0 0 1-1.7 1l-.3 1.9H9.3L9 18.4a7 7 0 0 1-1.7-1l-1.8.7-2-3.4L5 13.5a7 7 0 0 1 0-2L3.5 10.3l2-3.4 1.8.7a7 7 0 0 1 1.7-1l.3-1.9h5.4l.3 1.9a7 7 0 0 1 1.7 1l1.8-.7 2 3.4-1.5 1.2a7 7 0 0 1 0 2Z" />
+              </svg>
+            </button>
+          </header>
+
+          <div class="brief-hero">
+            <div>
+              <p class="eyebrow">Today at a glance</p>
+              <strong>3 events, 4 tasks, 1 thing that might slip.</strong>
+            </div>
+            <span class="brief-time">7:00</span>
+          </div>
+
+          <article class="brief-section">
+            <h3>Today</h3>
+            <p>
+              Mia has swim at 4:00 at Rec Center, and Sam is on pickup. Leo has
+              library day, so the book bag needs to leave with him.
+            </p>
+          </article>
+          <article class="brief-section">
+            <h3>To Do</h3>
+            <p>
+              RSVP for Aria's birthday by Friday. Buy milk tonight, and sign the
+              field trip form before backpacks are packed.
+            </p>
+          </article>
+          <article class="brief-section alert">
+            <h3>Falling Through</h3>
+            <p>
+              The field trip permission slip is due tomorrow morning and still
+              needs a parent signature.
+            </p>
+          </article>
+          <article class="brief-section calm">
+            <h3>Small Win</h3>
+            <p>
+              Saturday morning is still clear. Mika is keeping it that way.
+            </p>
+          </article>
+        </section>
+
+        <section id="tasks" class="screen app-screen" aria-label="Tasks">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow">Household tasks</p>
+              <h2>What needs doing</h2>
+            </div>
+          </header>
+          <div class="tabs" role="tablist" aria-label="Task filter">
+            <button class="active" type="button">Today</button>
+            <button type="button">Week</button>
+            <button type="button">Later</button>
+            <button type="button">Done</button>
+          </div>
+          <div class="task-list">
+            <button class="task-item overdue" type="button">
+              <span class="check-circle"></span>
+              <span>
+                <strong>Sign field trip form</strong>
+                <small>Due tomorrow morning · From photo</small>
+              </span>
+              <em>Chan</em>
+            </button>
+            <button class="task-item" type="button">
+              <span class="check-circle"></span>
+              <span>
+                <strong>Buy milk</strong>
+                <small>No date · Kitchen note</small>
+              </span>
+              <em>Sam</em>
+            </button>
+            <button class="task-item" type="button">
+              <span class="check-circle"></span>
+              <span>
+                <strong>RSVP to Aria's birthday</strong>
+                <small>Friday by 5:00 PM</small>
+              </span>
+              <em>Chan</em>
+            </button>
+          </div>
+          <div id="undo-toast" class="toast" role="status">Task completed. Undo</div>
+        </section>
+
+        <section id="events" class="screen app-screen" aria-label="Events">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow">Calendar</p>
+              <h2>This week</h2>
+            </div>
+          </header>
+          <div class="week-grid" aria-label="Week calendar">
+            <div class="day-col">
+              <strong>Mon</strong>
+              <span></span>
+            </div>
+            <div class="day-col">
+              <strong>Tue</strong>
+              <span class="event-pill rose">Piano</span>
+            </div>
+            <div class="day-col today">
+              <strong>Wed</strong>
+              <span class="event-pill blue">Library</span>
+              <span class="event-pill mint">Swim 4p</span>
+            </div>
+            <div class="day-col">
+              <strong>Thu</strong>
+              <span class="event-pill amber">Field trip</span>
+            </div>
+            <div class="day-col">
+              <strong>Fri</strong>
+              <span class="event-pill rose">Party RSVP</span>
+            </div>
+          </div>
+          <article class="detail-card">
+            <p class="eyebrow">Selected event</p>
+            <h3>Mia swim class</h3>
+            <p>Today, 4:00 PM at Rec Center. Sam is on pickup.</p>
+          </article>
+        </section>
+
+        <section id="meals" class="screen app-screen" aria-label="Meal list">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow">Dinner list</p>
+              <h2>This week</h2>
+            </div>
+            <button class="icon-button" type="button" aria-label="Next week">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </header>
+          <div class="meal-list">
+            <label><span>Mon</span><input value="Tacos" /></label>
+            <label><span>Tue</span><input value="Leftovers" /></label>
+            <label><span>Wed</span><input value="Pasta bolognese" /></label>
+            <label><span>Thu</span><input placeholder="Add dinner" /></label>
+            <label><span>Fri</span><input value="Pizza night" /></label>
+            <label><span>Sat</span><input placeholder="Add dinner" /></label>
+            <label><span>Sun</span><input value="Soup + bread" /></label>
+          </div>
+        </section>
+
+        <section id="settings" class="screen app-screen" aria-label="Settings">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow">Settings</p>
+              <h2>The Carter Family</h2>
+            </div>
+          </header>
+          <div class="settings-list">
+            <button type="button">
+              <span>Household</span>
+              <strong>2 parents, 2 kids</strong>
+            </button>
+            <button type="button">
+              <span>Daily brief</span>
+              <strong>7:00 AM</strong>
+            </button>
+            <button type="button">
+              <span>Notifications</span>
+              <strong>Email + push</strong>
+            </button>
+            <button type="button">
+              <span>Data export</span>
+              <strong>JSON</strong>
+            </button>
+          </div>
+        </section>
+
+        <section id="confirm" class="screen app-screen" aria-label="Confirm captured item">
+          <header class="app-header">
+            <button class="icon-button" id="close-confirm" type="button" aria-label="Back">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <div>
+              <p class="eyebrow">Review before saving</p>
+              <h2>Mika parsed this</h2>
+            </div>
+          </header>
+          <div class="parsed-card">
+            <label>
+              Type
+              <select>
+                <option>Event</option>
+                <option>Task</option>
+              </select>
+            </label>
+            <label>
+              Title
+              <input value="Mia swim class" />
+            </label>
+            <label>
+              Date and time
+              <input value="Tuesday at 4:00 PM" />
+            </label>
+            <label>
+              Location
+              <input value="Rec Center" />
+            </label>
+            <label>
+              Owner
+              <input value="Sam" />
+            </label>
+          </div>
+          <button id="save-confirm" class="primary-button full" type="button">Save to Mika</button>
+        </section>
+
+        <div id="capture-sheet" class="capture-sheet" aria-hidden="true">
+          <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Capture">
+            <div class="sheet-handle" aria-hidden="true"></div>
+            <h2>Add anything messy</h2>
+            <p>Type it, say it, or snap a form. Mika turns it into a draft.</p>
+            <textarea id="capture-input">Mia has swim class Tuesday 4pm at Rec Center, Sam picks up</textarea>
+            <div class="capture-actions">
+              <button class="icon-labeled" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v10M8 7v5a4 4 0 0 0 8 0V7M5 11v1a7 7 0 0 0 14 0v-1M12 19v3" />
+                </svg>
+                Voice
+              </button>
+              <button class="icon-labeled" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h3l2-3h6l2 3h3v13H4V7Zm8 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                </svg>
+                Photo
+              </button>
+              <button id="parse-capture" class="primary-button" type="button">Parse</button>
+            </div>
+          </div>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Primary navigation">
+          <button class="nav-button active" data-target="home" type="button" aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 11 12 4l8 7v9H5v-9Z" />
+            </svg>
+            <span>Home</span>
+          </button>
+          <button class="nav-button" data-target="tasks" type="button" aria-label="Tasks">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 12 4 4L19 6M5 20h14" />
+            </svg>
+            <span>Tasks</span>
+          </button>
+          <button id="open-capture" class="add-button" type="button" aria-label="Add capture">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </button>
+          <button class="nav-button" data-target="events" type="button" aria-label="Events">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 3v3M17 3v3M4 9h16M5 5h14v15H5V5Z" />
+            </svg>
+            <span>Events</span>
+          </button>
+          <button class="nav-button" data-target="meals" type="button" aria-label="Meals">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 3v18M4 8h6M17 3v18M14 3h6v8a3 3 0 0 1-6 0V3Z" />
+            </svg>
+            <span>Meals</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
