@@ -14,8 +14,8 @@ const waitlistForm = document.querySelector("#waitlist-form");
 const waitlistStatus = document.querySelector("#waitlist-status");
 const languageButtons = document.querySelectorAll(".language-switch button");
 
-const SUPABASE_URL = "https://YOUR_PROJECT_REF.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_URL = "sb_publishable_b-Z20_xQ6xveIjn4elL36g_WwFqt42C";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlua3lpd2h3am1mb2V1ZXBtd2x1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4NjI4NjcsImV4cCI6MjA5MjQzODg2N30.vcN7o-SUGOfnIAZdLEpOLeOwCQqCS91kE-FbFiRSImE";
 const WAITLIST_TABLE = "mika_waitlist";
 
 let onboardingStep = 0;
