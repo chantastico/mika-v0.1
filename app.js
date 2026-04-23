@@ -178,6 +178,8 @@ const translations = {
       "Thank you so much for helping us. Do not forget to join the waitlist so we can let you know when Mika launches.",
     formError: "Something did not save. Please try again in a moment.",
     sending: "Sending...",
+    emailSignupSuccess: "You’re on the list",
+    emailSignupError: "Try again",
     onboarding: [
       {
         title: "Let’s get your family set up.",
@@ -360,6 +362,8 @@ const translations = {
       "Merci beaucoup de nous aider. N'oubliez pas de rejoindre la liste d'attente pour être prévenu au lancement de Mika.",
     formError: "L'enregistrement n'a pas fonctionné. Réessayez dans un instant.",
     sending: "Envoi...",
+    emailSignupSuccess: "Vous êtes sur la liste",
+    emailSignupError: "Réessayez",
     onboarding: [
       {
         title: "Installons Mika pour votre famille.",
@@ -488,32 +492,70 @@ demoStart.addEventListener("click", () => {
   showScreen("onboarding");
 });
 
+async function saveEmailOnlyWaitlist(form, emailFieldName, source) {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const email = new FormData(form).get(emailFieldName).trim();
+  const originalText = submitButton.textContent;
+  const payload = {
+    email,
+    language: currentLanguage,
+    source,
+    page_url: window.location.href,
+    user_agent: window.navigator.userAgent,
+  };
+
+  submitButton.disabled = true;
+  submitButton.textContent = translate("sending");
+
+  if (!isSupabaseConfigured()) {
+    const saved = JSON.parse(localStorage.getItem("mika_waitlist_drafts") || "[]");
+    saved.push({ ...payload, created_at: new Date().toISOString() });
+    localStorage.setItem("mika_waitlist_drafts", JSON.stringify(saved));
+    form.reset();
+    submitButton.textContent = translate("emailSignupSuccess");
+    window.setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }, 2600);
+    return;
+  }
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${WAITLIST_TABLE}`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Supabase insert failed with ${response.status}`);
+    }
+
+    form.reset();
+    submitButton.textContent = translate("emailSignupSuccess");
+  } catch (error) {
+    submitButton.textContent = translate("emailSignupError");
+  } finally {
+    window.setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }, 2600);
+  }
+}
+
 heroWaitlist.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const heroEmail = new FormData(heroWaitlist).get("hero_email").trim();
-  waitlistForm.querySelector('input[name="email"]').value = heroEmail;
-  document.querySelector(".feedback-card").scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-  waitlistForm.querySelector('input[name="first_name"]').focus({
-    preventScroll: true,
-  });
+  saveEmailOnlyWaitlist(heroWaitlist, "hero_email", "hero_waitlist");
 });
 
 footerWaitlist.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const footerEmail = new FormData(footerWaitlist).get("footer_email").trim();
-  waitlistForm.querySelector('input[name="email"]').value = footerEmail;
-  document.querySelector(".feedback-card").scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-  waitlistForm.querySelector('input[name="first_name"]').focus({
-    preventScroll: true,
-  });
+  saveEmailOnlyWaitlist(footerWaitlist, "footer_email", "footer_waitlist");
 });
 
 document.querySelector("#open-capture").addEventListener("click", () => {
