@@ -139,8 +139,6 @@ const translations = {
     navTasks: "Tasks",
     navEvents: "Events",
     navMeals: "Meals",
-    guideTitle: "Tap the prototype",
-    guideCopy: "Start onboarding or hit + to add a messy family thing.",
     feedbackEyebrow: "Join the private beta",
     feedbackTitle: "Please help us improve the app.",
     feedbackCopy: "Provide us some comments so we can better understand your family dynamics.",
@@ -323,8 +321,6 @@ const translations = {
     navTasks: "Tâches",
     navEvents: "Événements",
     navMeals: "Repas",
-    guideTitle: "Touchez le prototype",
-    guideCopy: "Commencez l'onboarding ou appuyez sur + pour ajouter un truc familial en vrac.",
     feedbackEyebrow: "Rejoindre la beta privée",
     feedbackTitle: "Aidez-nous à améliorer l'app.",
     feedbackCopy: "Laissez-nous vos commentaires pour mieux comprendre votre dynamique familiale.",
@@ -394,8 +390,6 @@ const translations = {
 };
 
 function showScreen(id) {
-  phone.classList.add("guide-hidden");
-
   screens.forEach((screen) => {
     screen.classList.toggle("active", screen.id === id);
   });
@@ -457,8 +451,6 @@ function renderOnboardingStep() {
 }
 
 nextStepButton.addEventListener("click", () => {
-  phone.classList.add("guide-hidden");
-
   if (onboardingStep < 3) {
     onboardingStep += 1;
     renderOnboardingStep();
@@ -469,8 +461,6 @@ nextStepButton.addEventListener("click", () => {
 });
 
 backStepButton.addEventListener("click", () => {
-  phone.classList.add("guide-hidden");
-
   if (onboardingStep > 0) {
     onboardingStep -= 1;
     renderOnboardingStep();
@@ -482,7 +472,6 @@ backStepButton.addEventListener("click", () => {
 
 dots.forEach((dot) => {
   dot.addEventListener("click", () => {
-    phone.classList.add("guide-hidden");
     onboardingStep = Number(dot.dataset.step);
     renderOnboardingStep();
   });
@@ -528,7 +517,6 @@ footerWaitlist.addEventListener("submit", (event) => {
 });
 
 document.querySelector("#open-capture").addEventListener("click", () => {
-  phone.classList.add("guide-hidden");
   captureSheet.classList.add("open");
   captureSheet.setAttribute("aria-hidden", "false");
 });
