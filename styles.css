@@ -486,8 +486,6 @@ h3 {
 
 .phone {
   position: relative;
-  top: 2rem;
-  position: sticky;
   overflow: hidden;
   width: min(100%, 24.5rem);
   height: min(52rem, calc(100vh - 2rem));
@@ -1487,10 +1485,8 @@ svg {
   }
 
   .phone {
-    position: fixed;
-    inset: 0;
-    transform: translateY(100%);
-    transition: transform 280ms ease;
+    position: relative;
+    transform: none;
     width: 100%;
     height: 100vh;
     min-height: 100vh;
@@ -1507,7 +1503,7 @@ svg {
   }
 
   body.demo-open .phone {
-    transform: translateY(0);
+    transform: none;
   }
 
   .launch-strip {
