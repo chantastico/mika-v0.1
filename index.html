@@ -8,9 +8,9 @@
   </head>
   <body>
     <div class="language-switch" aria-label="Language selector">
-      <button class="active" type="button" data-lang="en">English</button>
+      <button class="active" type="button" data-lang="en">EN</button>
       <span>/</span>
-      <button type="button" data-lang="fr">Français</button>
+      <button type="button" data-lang="fr">FR</button>
     </div>
     <main class="shell" aria-label="Mika clickable prototype">
       <section class="brand-panel" aria-label="Mika product preview">
@@ -19,7 +19,6 @@
           <span data-i18n="betaBadge">Private beta for busy families</span>
         </div>
         <div class="brand-lockup">
-          <p class="eyebrow" data-i18n="heroEyebrow">For families who remember too much</p>
           <h1 data-i18n="heroTitle">Turn your family chaos into a calm morning.</h1>
         </div>
         <p class="brand-copy" data-i18n="heroCopy">
@@ -38,7 +37,7 @@
           <button class="brand-cta" type="submit" data-i18n="heroWaitlistButton">Get early access</button>
         </form>
         <div class="hero-actions">
-          <button id="demo-start" class="demo-link" type="button" data-i18n="demoLink">Try the live demo -></button>
+          <button id="demo-start" class="demo-link" type="button" data-i18n="demoLink">Start here</button>
           <span data-i18n="privacyLine">Your family data never trains anyone else's AI.</span>
         </div>
         <div class="signal-row" aria-label="Mika positioning">
@@ -515,19 +514,9 @@
                 <span data-i18n="locationLabel">Location</span>
                 <input name="location" autocomplete="address-level2" placeholder="Toronto, ON" data-i18n-placeholder="locationPlaceholder" required />
               </label>
-              <label>
-                <span data-i18n="parentTypeLabel">Parent type</span>
-                <select name="parent_type">
-                  <option data-i18n="parentWorking">Working mom</option>
-                  <option data-i18n="parentStayHome">Stay-at-home mom</option>
-                  <option data-i18n="parentDefault">Default parent</option>
-                  <option data-i18n="parentCoparent">Co-parent</option>
-                  <option data-i18n="parentFounder">Founder household</option>
-                </select>
-              </label>
             </div>
             <fieldset class="rating-field">
-              <legend data-i18n="ratingLabel">How strong is the idea?</legend>
+              <legend data-i18n="ratingLabel">How would you rate the app?</legend>
               <div class="star-rating" aria-label="Rate Mika from 1 to 5">
                 <input id="rating-5" name="rating" type="radio" value="5" required />
                 <label for="rating-5" aria-label="5 stars">★</label>
@@ -542,27 +531,27 @@
               </div>
             </fieldset>
             <label>
-              <span data-i18n="usefulnessLabel">After trying the prototype, this feels...</span>
+              <span data-i18n="usefulnessLabel">After trying the prototype, it feels...</span>
               <select name="usefulness" required>
                 <option value="" data-i18n="usefulnessPlaceholder">Choose one</option>
-                <option value="love_experience" data-i18n="usefulnessLove">I love the experience</option>
-                <option value="very_useful" data-i18n="usefulnessVery">Very useful for my family</option>
-                <option value="interesting" data-i18n="usefulnessInteresting">Interesting, but I need to see more</option>
-                <option value="unclear" data-i18n="usefulnessUnclear">The value is not clear yet</option>
-                <option value="not_useful" data-i18n="usefulnessNot">Not useful for my family</option>
+                <option value="amazing_fit" data-i18n="usefulnessLove">like an amazing fit for my family</option>
+                <option value="very_useful" data-i18n="usefulnessVery">very useful for our everyday logistics</option>
+                <option value="interesting" data-i18n="usefulnessInteresting">interesting, but I need to see more</option>
+                <option value="unclear" data-i18n="usefulnessUnclear">not clear enough yet</option>
+                <option value="not_useful" data-i18n="usefulnessNot">not useful for my family</option>
               </select>
             </label>
             <fieldset class="keyword-field">
-              <legend data-i18n="keywordsLabel">What should Mika help with?</legend>
-              <label><input type="checkbox" name="feedback_keywords" value="school_forms" /> <span data-i18n="keywordForms">School forms</span></label>
-              <label><input type="checkbox" name="feedback_keywords" value="calendar" /> <span data-i18n="keywordCalendar">Calendar chaos</span></label>
+              <legend data-i18n="keywordsLabel">What would be your main priorities?</legend>
+              <label><input type="checkbox" name="feedback_keywords" value="school_sports_birthdays" /> <span data-i18n="keywordForms">School, sports activities, birthday parties, etc.</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="calendar_management" /> <span data-i18n="keywordCalendar">Calendar management</span></label>
               <label><input type="checkbox" name="feedback_keywords" value="coparent_handoffs" /> <span data-i18n="keywordHandoffs">Co-parent handoffs</span></label>
-              <label><input type="checkbox" name="feedback_keywords" value="forgotten_tasks" /> <span data-i18n="keywordTasks">Forgotten tasks</span></label>
-              <label><input type="checkbox" name="feedback_keywords" value="meals" /> <span data-i18n="keywordMeals">Meals</span></label>
-              <label><input type="checkbox" name="feedback_keywords" value="daily_brief" /> <span data-i18n="keywordBrief">Morning brief</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="forgotten_task_notifications" /> <span data-i18n="keywordTasks">Notifications for forgotten tasks</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="meals_meal_prep" /> <span data-i18n="keywordMeals">Meals and meal prep</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="briefs" /> <span data-i18n="keywordBrief">Morning, weekly, or monthly briefs</span></label>
             </fieldset>
             <label>
-              <span data-i18n="familySnapshotLabel">Family snapshot (optional)</span>
+              <span data-i18n="familySnapshotLabel">Tell us more about your family dynamics or family structure.</span>
               <textarea
                 name="family_snapshot"
                 placeholder="Example: 2 parents, 2 kids ages 4 and 7. One parent travels often, one manages school logistics."
@@ -570,7 +559,7 @@
               ></textarea>
             </label>
             <label>
-              <span data-i18n="commentLabel">Product feedback</span>
+              <span data-i18n="commentLabel">What can we improve? What features do you want to see in the product?</span>
               <textarea
                 name="comment"
                 placeholder="What does your family always forget? What would make Mika useful enough to share?"
@@ -579,7 +568,7 @@
               ></textarea>
             </label>
             <div class="form-footer">
-              <button class="brand-cta" type="submit" data-i18n="feedbackButton">Get early access</button>
+              <button class="brand-cta" type="submit" data-i18n="feedbackButton">Send your feedback</button>
               <p id="waitlist-status" role="status" data-i18n="formDefaultStatus">
                 Privacy-first beta. No kid data sold. No spam.
               </p>

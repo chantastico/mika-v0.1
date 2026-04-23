@@ -3,7 +3,6 @@ create table if not exists public.mika_waitlist (
   first_name text not null,
   email text not null,
   location text not null,
-  parent_type text,
   rating integer check (rating between 1 and 5),
   usefulness text,
   feedback_keywords text,

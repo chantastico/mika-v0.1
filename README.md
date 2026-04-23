@@ -34,7 +34,7 @@ GitHub will provide a public URL after the Pages deploy finishes.
    - `YOUR_SUPABASE_ANON_KEY`
 6. Commit and redeploy the updated `app.js`.
 
-The form collects first name, email, location, parent type, 1-5 rating, usefulness signal, feedback keywords, optional family snapshot, product feedback, language, page URL, user agent, and timestamp.
+The form collects first name, email, location, 1-5 rating, usefulness signal, feedback keywords, optional family dynamics/structure, product feedback, language, page URL, user agent, and timestamp.
 
 ## Feedback Collection Recommendation
 
@@ -44,4 +44,4 @@ For analysis, export the `mika_waitlist` table from Supabase as CSV and open it 
 
 ## Language Toggle
 
-The prototype includes an `English / Français` switch in the top-right corner. Main landing copy, onboarding copy, guidance, and waitlist/feedback form text are translated in `app.js`.
+The prototype includes an `EN / FR` switch in the top-left corner. Main landing copy, onboarding copy, guidance, and waitlist/feedback form text are translated in `app.js`.
