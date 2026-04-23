@@ -347,7 +347,14 @@ h3 {
 }
 
 .moment-card.after {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(135deg, #eef1ff 0%, #e7fbf1 100%);
+}
+
+.moment-card.after h2 {
+  max-width: 18rem;
+  margin-bottom: 1rem;
 }
 
 .chaos-stack {
@@ -404,11 +411,9 @@ h3 {
 }
 
 .brief-preview {
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  min-height: 11.25rem;
+  position: relative;
+  min-height: 0;
+  margin-top: auto;
   padding: 1rem;
   border-radius: 8px;
   background: #fff;
